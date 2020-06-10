@@ -1,0 +1,24 @@
+(Model customer{
+    properties[
+        (name{
+            type({
+                primitive String
+            })
+        })
+        (phoneNumber{
+            type({
+                primitive String
+            })
+        })
+        (address{
+            type({
+                primitive String
+            })
+        })
+        (password{
+            type({
+                primitive String
+            })
+        })
+    ]
+})

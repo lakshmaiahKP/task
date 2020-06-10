@@ -1,0 +1,601 @@
+(Component SignUp{
+    properties[
+        (name{
+            type({
+                primitive String
+            })
+            internal true
+        })
+        (phoneNumber{
+            type({
+                primitive String
+            })
+            internal true
+        })
+        (address{
+            type({
+                primitive String
+            })
+            internal true
+        })
+        (password{
+            type({
+                primitive String
+            })
+            internal true
+        })
+        (reenterPassword{
+            type({
+                primitive String
+            })
+            internal true
+        })
+        (visibleIndicator {
+            type ({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (isNotValidName {
+            type ({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (isNotValidPhoneNumber {
+            type ({
+                primitive Boolean 
+            })
+            defaultValue `false`
+            internal true
+        })
+        (isNotValidAddress {
+            type ({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (isNotMinmumLengthPwd{
+            type({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (isNotMatchedPassword{
+            type({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (showErrors{
+            type({
+                primitive Boolean
+            })
+            defaultValue `false`
+            internal true
+        })
+        (errorMessages{
+            collection true
+            type({
+                primitive String
+            })
+            internal true
+        })
+    ]
+
+    //path 'd3e/studio/ui'
+    build (CRef center{
+        component #Center
+        child(CRef id{
+            component #SingleChildScrollView
+            data [
+                ({
+                    prop #padding
+                    type Compound
+                    compound ({
+                        struct #EdgeInsets
+                        values [
+                            ({
+                                prop #left
+                                value '40.0'
+                            })
+                            ({
+                                prop #right
+                                value '40.0'
+                            })
+                            ({
+                                prop #top
+                                value '40.0'
+                            })
+                            ({
+                                prop #bottom
+                                value '40.0'
+                            })
+                        ]
+                    })
+                })
+            ]
+            child(CRef id{
+                component #Column
+                data[
+                    ({
+                        prop #mainAxisAlignment
+                        value 'center'
+                    })
+                ]
+                children[
+                    (CRef name{
+                        component #TextField
+                        data[
+                            ({
+                                prop #inputDecoration
+                                type Compound
+                                compound ({
+                                    struct #InputDecoration
+                                    values[
+                                        ({
+                                            prop #labelText
+                                            value 'Name'
+                                        })
+                                        ({
+                                            prop #errorText
+                                            type Bind 
+                                            bindTo `isNotValidName ? 'Name minimum 6 characters': null`
+                                        })
+                                    ]
+                                })
+                            })
+                            ({
+                                prop #value
+                                type Bind
+                                bindTo `name`
+                            })
+                            ({
+                                event #onChanged
+                                type Bind
+                                bindTo `setStateName`
+                            })
+                            ({
+                                prop #expand
+                                value 'true'
+                            })
+                        ]
+                    })
+                    (CRef phonenumber{
+                        component #TextField
+                        data[
+                            ({
+                                prop #inputDecoration
+                                type Compound
+                                compound ({
+                                    struct #InputDecoration
+                                    values[
+                                        ({
+                                            prop #labelText
+                                            value 'PhoneNumber'
+                                        })
+                                        ({
+                                            prop #errorText
+                                            type Bind
+                                            bindTo `isNotValidPhoneNumber ? 'Phonenumber contains 10 digits ': null`
+                                        })
+                                    ]
+                                })
+                            })
+                            ({
+                                prop #value
+                                type Bind
+                                bindTo `phoneNumber`
+                            })
+                            ({
+                                event #onChanged
+                                type Bind
+                                bindTo `setStatePhoneNumber`
+                            })
+                            ({
+                                prop #expand
+                                value 'false'
+                            })
+                        ]
+                    }) 
+                    (CRef address{
+                        component #TextField
+                        data[
+                            ({
+                                prop #inputDecoration
+                                type Compound
+                                compound ({
+                                    struct #InputDecoration
+                                    values[
+                                        ({
+                                            prop #labelText
+                                            value 'Address'
+                                        })
+                                        ({
+                                            prop #errorText
+                                            type Bind
+                                            bindTo `isNotValidAddress ?'Addres minimum 20 characters' : null`
+                                        })
+                                    ]
+                                })
+                            })
+                            ({
+                                prop #value
+                                type Bind
+                                bindTo `address`
+                            })
+                            ({
+                                event #onChanged
+                                type Bind
+                                bindTo `setStateAddress`
+                            })
+                            ({
+                                prop #expand
+                                value 'false'
+                            })
+                        ]
+                    }) 
+                    (CRef password{
+                        component #TextField
+                        data[
+                            ({
+                                prop #inputDecoration
+                                type Compound
+                                compound ({
+                                    struct #InputDecoration
+                                    values [
+                                        ({
+                                            prop #labelText
+                                            value 'Password'
+                                        })
+                                        ({
+                                            prop #errorText
+                                            type Bind
+                                            bindTo `isNotMinmumLengthPwd ?'password minimum 6 characters' : null`
+                                        })
+                                    ]
+                                })
+                            })
+                            ({
+                                prop #obscureText
+                                value 'true'
+                            })
+                            ({
+                                prop #value
+                                type Bind
+                                bindTo `password`
+                            })
+                            ({
+                                event #onChanged
+                                type Bind
+                                bindTo `setStatePassword`
+                            })
+                            ({
+                                prop #constraints
+                                type Compound
+                                compound ({
+                                    struct #BoxConstraints
+                                    values [
+                                        ({
+                                            prop #minWidth
+                                            value '200'
+                                        })
+                                        ({
+                                            prop #maxWidth
+                                            value '400'
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
+                    })  
+                    (CRef reEnterPassword {
+                        component #TextField
+                        data [
+                            ({
+                                prop #inputDecoration
+                                type Compound
+                                compound ({
+                                    struct #InputDecoration
+                                    values [
+                                        ({
+                                            prop #labelText
+                                            value 'Re-Enter Password'
+                                        })
+                                        ({
+                                            prop #errorText
+                                            type Bind
+                                            bindTo `isNotMatchedPassword ? 'Password and confirmation password do not match' : null`
+                                        })
+                                    ]
+                                })
+                            })
+                            ({
+                                prop #obscureText
+                                value 'true'
+                            })
+                            ({
+                                prop #value
+                                type Bind
+                                bindTo `reenterPassword`
+                            })
+                            ({
+                                event #onChanged
+                                type Bind
+                                bindTo `setStateReEnterPassword`
+                            })
+                            ({
+                                prop #constraints
+                                type Compound
+                                compound ({
+                                    struct #BoxConstraints
+                                    values [
+                                        ({
+                                            prop #minWidth
+                                            value '200'
+                                        })
+                                        ({
+                                            prop #maxWidth
+                                            value '400'
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
+                    })
+                    (CIf if {
+                        condition `showErrors`
+                        then (CRef errorMessageList {
+                            component #Column
+                            data [
+                                ({
+                                    prop #constraints
+                                    type Compound
+                                    compound ({
+                                        struct #BoxConstraints
+                                        values [
+                                            ({
+                                                prop #minWidth
+                                                value '200'
+                                            })
+                                            ({
+                                                prop #maxWidth
+                                                value '400'
+                                            })
+                                        ]
+                                    })
+                                })
+                            ]
+                            children [
+                                (CFor error {
+                                    items `errorMessages`
+                                    type ({
+                                        primitive String
+                                    })
+                                    item (CRef id {
+                                        component #TextView
+                                        data [
+                                            ({
+                                                prop #data
+                                                type Bind
+                                                bindTo `error`
+                                            })
+                                            ({
+                                                prop #style
+                                                type Compound
+                                                compound ({
+                                                    struct #TextStyle
+                                                    values [
+                                                        ({
+                                                            prop #color
+                                                            type Compound
+                                                            compound ({
+                                                                struct #Color
+                                                                values [
+                                                                    ({
+                                                                        prop #alpha
+                                                                        value '255'
+                                                                    })
+                                                                    ({
+                                                                        prop #red
+                                                                        value '255'
+                                                                    })
+                                                                    ({
+                                                                        prop #green
+                                                                        value '0'
+                                                                    })
+                                                                    ({
+                                                                        prop #blue
+                                                                        value '0'
+                                                                    })
+                                                                ]
+                                                            })
+                                                        })
+                                                    ]
+                                                })
+                                            })
+                                        ]
+                                    })
+                                })
+                            ]
+                        })
+                    })
+                    (CPopup indicator {
+                        autoClose false
+                        body (loadingIndicator {
+                            component #LoadingIndicator
+                            data [
+                                ({
+                                    prop #title
+                                    value 'Registering Please Wait'
+                                })
+                            ]
+                        })
+                        showOn #visibleIndicator
+                    })
+                    (CRef button{
+                        component #RaisedButton
+                        data[
+                            ({
+                                event #onPressed
+                                type Bind
+                                bindTo `onSignUp`
+                            })
+                        ]
+                        child(CRef id{
+                            component #TextView
+                            data[
+                                ({
+                                    prop #data
+                                    value 'SignUp'
+                                })
+                            ]
+                        })
+                    })
+                    (CRef id {
+                        component #FlatButton
+                        data [
+                            ({
+                                event #onPressed
+                                type Bind
+                                bindTo `onExistingUser`
+                            })
+                        ]
+                        child (CRef id {
+                            component #TextView
+                            data [
+                                ({
+                                    prop #data
+                                    value 'Already have an account? Sign in.'
+                                })
+                                ({
+                                    prop #style
+                                    type Compound
+                                    compound ({
+                                        struct #TextStyle
+                                        values [
+                                            ({
+                                                prop #decoration
+                                                value 'underline'
+                                            })
+                                        ]
+                                    })
+                                })
+                            ]
+                        })
+                    })           
+                ]  
+            })
+        })
+    })
+
+    events[
+        (onExistingUser{
+
+        })   
+    ]
+    eventHandlers [
+        (setStateName{
+            params [
+                (data{
+                    type ({
+                        primitive String
+                    })
+                })
+            ]
+            block ```
+            this.name=data;
+            ```
+        })
+        (setStatePhoneNumber{
+            params [
+                (data{
+                    type ({
+                        primitive String
+                    })
+                })
+            ]
+            block ```
+            this.phoneNumber = data;
+            ```
+        })
+        (setStateAddress{
+            params[
+                (data{
+                    type({
+                        primitive String
+                    })
+                })
+            ]
+            block ```
+            this.address = data;
+            ```
+        })
+        (setStatePassword{
+            params [
+                (data{
+                    type ({
+                        primitive String
+                    })
+                })
+            ]
+            block ```
+            this.password = data;
+            ```
+        })
+        (setStateReEnterPassword{
+            params[
+                (data{
+                    type({
+                        primitive String
+                    })
+                })
+            ]
+            block ```
+            this.reenterPassword = data;
+            ```
+        })
+        (onSignUp{
+            block ```
+                isNotValidName = !(this.name.length >3);
+                isNotValidPhoneNumber = !(this.phoneNumber.length  == 10 );
+                isNotValidAddress = !(this.address.length > 10);
+                isNotMinmumLengthPwd = !(this.password.length > 6); 
+                isNotMatchedPassword =!(password == reenterPassword); 
+                if(!( isNotValidName || isNotValidPhoneNumber || isNotValidAddress || isNotMinmumLengthPwd || isNotMatchedPassword)){
+                    rigisterNewUser();
+                }
+            ```
+        })
+        (loginUser{
+            block ```
+            
+            ```
+        })
+        (rigisterNewUser{
+            block ```
+                if(FieldValidation.isPhoneNumber(this.signUpRequest.phoneNumber)){
+                    this.isNotValidPhoneNumber = false;
+                    this.showErrors = false;
+                    this.visibleIndicator = true;
+                     MutateSignUpRequestResult result = Mutation.createSignUpRequest(this.signUpRequest).await;
+                     if(result.success){
+                         this.loginUser();
+                     }else{
+                         this.errorMessages = result.errors;
+                         this.showErrors = true;
+                         this.visibleIndicator = false;
+                     }
+                }
+                else{
+                     this.isNotValidPhoneNumber = true;
+                }
+            ```
+        })
+    ] 
+})
