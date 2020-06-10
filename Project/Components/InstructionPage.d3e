@@ -1,0 +1,202 @@
+(Component instructionPage{
+
+    build(CRef center{
+        component #Column
+        data[
+            ({
+                prop #mainAxisAlignment
+                value 'center'
+            })
+        ]
+        children[
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value 'Follow Rules and regulations Otherwise taking serious action'
+                    })
+                     ({
+                        prop #textAlign
+                        value 'center'
+                    })
+                    ({
+                        prop #padding
+                        type Compound
+                        compound ({
+                            struct #EdgeInsets
+                            values [
+                                ({
+                                    prop #left
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #top
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '20.0'
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value ' '
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value 'enter coorect details for requied fields.Do not fake details for required fields. '
+                    })
+                    ({
+                        prop #textAlign
+                        value 'center'
+                    })
+                    ({
+                        prop #padding
+                        type Compound
+                        compound ({
+                            struct #EdgeInsets
+                            values [
+                                ({
+                                    prop #left
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #top
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '20.0'
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value ' '
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value 'Use omnly polite Imformstion.'
+                    })
+                     ({
+                        prop #textAlign
+                        value 'center'
+                    })
+                    ({
+                        prop #padding
+                        type Compound
+                        compound ({
+                            struct #EdgeInsets
+                            values [
+                                ({
+                                    prop #left
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #top
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '20.0'
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value ' '
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value 'Help to the people.Be an Indian.'
+                    })
+                     ({
+                        prop #textAlign
+                        value 'center'
+                    })
+                    ({
+                        prop #padding
+                        type Compound
+                        compound ({
+                            struct #EdgeInsets
+                            values [
+                                ({
+                                    prop #left
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #top
+                                    value '20.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '20.0'
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+            (CRef id{
+                component #TextView
+                data[
+                    ({
+                        prop #data
+                        value ' '
+                    })
+                ]
+            })
+        ]
+    })
+})

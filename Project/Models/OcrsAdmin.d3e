@@ -1,0 +1,14 @@
+(Model ocrsAdmin{
+    properties[
+        (phoneNumber{
+            type({
+                primitive String
+            })
+        })
+        (password{
+            type({
+                primitive String
+            })
+        })
+    ]
+})
